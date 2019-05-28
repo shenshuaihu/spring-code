@@ -33,9 +33,9 @@ public class TaskExecutorConfig implements AsyncConfigurer {
          *      队列最大长度
          */
         ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
-        taskExecutor.setCorePoolSize(5);
-        taskExecutor.setMaxPoolSize(10);
-        taskExecutor.setQueueCapacity(25);
+        taskExecutor.setCorePoolSize(50);
+        taskExecutor.setMaxPoolSize(80);
+        taskExecutor.setQueueCapacity(100);
         taskExecutor.initialize();
         return taskExecutor;
     }

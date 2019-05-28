@@ -5,10 +5,10 @@
  */
 package com.ch3.taskexecutor;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
 
 /**
  * @description: 任务执行类
@@ -25,11 +25,18 @@ public class AsyncTaskService {
      */
     @Async
     public void executeAsyncTask(Integer i) {
-        System.out.println("执行异步任务：" + i);
+        int a = (int)(1+Math.random()*(6000));
+
+        try {
+            Thread.sleep(a);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(new Date() + "执行异步任务：" +  i);
     }
 
     @Async
     public void executeAsyncTaskPlus(Integer i) {
-        System.out.println("执行异步任务+1：" + i);
+        System.out.println( new Date() +"执行异步任务+1：" + i);
     }
 }

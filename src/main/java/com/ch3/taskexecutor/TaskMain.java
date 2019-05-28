@@ -7,6 +7,8 @@ package com.ch3.taskexecutor;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.Date;
+
 /**
  * @description: 线程调用入口
  * @author: Shenshuaihu
@@ -19,9 +21,10 @@ public class TaskMain {
                 new AnnotationConfigApplicationContext(TaskExecutorConfig.class);
         AsyncTaskService taskService = context.getBean(AsyncTaskService.class);
         System.out.println(taskService);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
+            System.out.println( new Date()+  "=======" + i +"=========");
             taskService.executeAsyncTask(i);
-            taskService.executeAsyncTaskPlus(i);
+            //taskService.executeAsyncTaskPlus(i);
         }
         context.close();
     }
