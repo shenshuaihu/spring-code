@@ -5,6 +5,8 @@
  */
 package com.ch3.taskscheduler;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 /**
  * @description: 定时计划启动入口
  * @author: Shenshuaihu
@@ -12,4 +14,8 @@ package com.ch3.taskscheduler;
  * @data: 2019-05-28 23:43
  */
 public class SchedulerMain {
+    public static void main(String[] args) {
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(TaskSchedulerConfig.class);
+    }
 }

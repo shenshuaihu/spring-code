@@ -21,8 +21,4 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @ComponentScan("com.ch3.taskscheduler")
 @EnableScheduling
 public class TaskSchedulerConfig {
-    public static void main(String[] args) {
-        AnnotationConfigApplicationContext context =
-                new AnnotationConfigApplicationContext(TaskSchedulerConfig.class);
-    }
 }
