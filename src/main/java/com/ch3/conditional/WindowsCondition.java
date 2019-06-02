@@ -17,6 +17,13 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
  * @data: 2019-05-30 23:12
  */
 public class WindowsCondition implements Condition {
+
+    /**
+     * 如果返回的为True，改内容会被创建
+     * @param conditionContext
+     * @param annotatedTypeMetadata
+     * @return
+     */
     @Override
     public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {
         return conditionContext.getEnvironment().getProperty("os.name").contains("Windows");
