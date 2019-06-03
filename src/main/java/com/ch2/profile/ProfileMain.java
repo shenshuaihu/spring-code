@@ -3,7 +3,7 @@
  * 版权：Copyright 2018-2022 HAND All Rights Reserved.
  * 描述:
  */
-package ch2.profile;
+package com.ch2.profile;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

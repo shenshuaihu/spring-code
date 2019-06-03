@@ -3,7 +3,7 @@
  * 版权：Copyright 2017-2022 HAND All Rights Reserved.
  * 描述:
  */
-package ch2.profile;
+package com.ch2.profile;
 
 /**
  * @description: 需要测试的bean
