@@ -16,8 +16,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class ProfileMain {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context =
-                new AnnotationConfigApplicationContext(ProfileConfig.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 
         /**
          * 1、先将活动的profile设置为prod
