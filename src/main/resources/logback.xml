@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="1 seconds">
+    <contexListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contexListener>
+    <jmxConfigurator/>
+    <apperder name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>lognak: %d{HH:mm:ss.SSS} %logger{36} - %msg%n</pattern>
+        </encoder>
+    </apperder>
+    <!-- 该包下的日志级别为DEBUG，遇到错误时便可以看到更详细的信息 -->
+    <logger name="org.springframework.web" level="DEBUG"/>
+    <root level="info">
+        <appender-ref red="console"/>
+    </root>
+</configuration>
