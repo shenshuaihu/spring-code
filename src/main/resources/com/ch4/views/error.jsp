@@ -4,12 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Spting-Code</title>
+    <title>@ControllerAdvice</title>
     <link rel="stylesheet" type="text/css" value="">
 </head>
 <body>
-<pre>Welcome to Spring MVC word</pre>
-<h2> index.jsp </h2>
-
+<h2> error.jsp </h2>
+${errorMessage}
 </body>
 </html>
