@@ -53,10 +53,10 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
     }
 
     /**
-     *注册拦截器
+     *注册拦截器即把自定义的拦截器添加到mvc 配置中
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(demoInterceptor());
+        registry.addInterceptor(this.demoInterceptor()).addPathPatterns("/**");
     }
 }
