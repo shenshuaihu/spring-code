@@ -33,7 +33,7 @@ public class UploadController {
          * FileUtils.writeByteArrayToFile 快速写到磁盘
          */
         try {
-            FileUtils.writeByteArrayToFile(new File("D:/logs" + file.getOriginalFilename()), file.getBytes());
+            FileUtils.writeByteArrayToFile(new File("D:/logs/" + file.getOriginalFilename()), file.getBytes());
             return "ok";
         } catch (IOException e) {
             e.printStackTrace();
