@@ -6,9 +6,11 @@
 package com.ch4.config;
 
 import com.ch4.interceptor.DemoInterceptor;
+import com.ch4.messageconverter.MyMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -19,6 +21,8 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+
+import java.util.List;
 
 /**
  * @description: SpringMVC 配置
@@ -65,6 +69,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
     }
 
     /**
+     * 配置访问时的资源映射
      * 等同于 @RequestMapping("/index")
      *       public String hello() { return "index";  }
      * @param registry
@@ -73,13 +78,23 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/index").setViewName("/index");
         registry.addViewController("/toUpload").setViewName("/upload");
+        registry.addViewController("/converter").setViewName("/converter");
+
     }
 
+    /**
+     * URL不至于被转化格式而不识别
+     * @param configurer
+     */
     @Override
     public void configurePathMatch(PathMatchConfigurer configurer) {
         configurer.setUseSuffixPatternMatch(false);
     }
 
+    /**
+     * 文件上传配置
+     * @return
+     */
     @Bean
     public MultipartResolver multipartResolver() {
         CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
@@ -87,5 +102,22 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
         return multipartResolver;
     }
 
+    /**
+     * 添加一个自定义的HttpMessageConverter，不会覆盖默认注册的HttpMessageConverter
+     * @param converters
+     */
+    @Override
+    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+        converters.add(converter());
+    }
+
+    /**
+     * 自定义的bean注册进来
+     * @return
+     */
+    @Bean
+    public MyMessageConverter converter() {
+        return new MyMessageConverter();
+    }
 
 }
