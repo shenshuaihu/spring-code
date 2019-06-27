@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -33,6 +35,7 @@ import java.util.List;
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.ch4")
+@EnableScheduling
 public class MyMvcConfig extends WebMvcConfigurerAdapter {
     @Bean
     public InternalResourceViewResolver viewResolver() {
@@ -80,6 +83,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/toUpload").setViewName("/upload");
         registry.addViewController("/converter").setViewName("/converter");
         registry.addViewController("/sse").setViewName("/sse");
+        registry.addViewController("/async").setViewName("/async");
 
     }
 
