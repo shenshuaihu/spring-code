@@ -25,7 +25,7 @@ public class AsyncTaskService {
      */
     @Async
     public void executeAsyncTask(Integer i) {
-        int a = (int)(1+Math.random()*(6000));
+        int a = (int)(1+Math.random()*(36000));
 
         try {
             Thread.sleep(a);

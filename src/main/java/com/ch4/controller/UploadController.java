@@ -5,6 +5,10 @@
  */
 package com.ch4.controller;
 
+import com.ch0.excel.ImportExcel;
+import com.ch0.excel.ImportResultData;
+import com.ch0.excel.ParseExcelUtil;
+import com.ch4.domain.DemoExcel;
 import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,8 +38,14 @@ public class UploadController {
          */
         try {
             FileUtils.writeByteArrayToFile(new File("D:/logs/" + file.getOriginalFilename()), file.getBytes());
+
+            ImportResultData importResultData = new ParseExcelUtil<>(DemoExcel.class).parseFile(
+                    ImportExcel.CMF_CLM_CLAIM_STATE_APPLY_IMPORT_MAP, file);
             return "ok";
         } catch (IOException e) {
+            e.printStackTrace();
+            return "wrong";
+        } catch (Exception e) {
             e.printStackTrace();
             return "wrong";
         }

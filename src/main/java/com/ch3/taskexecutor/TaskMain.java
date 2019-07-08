@@ -22,7 +22,7 @@ public class TaskMain {
         AsyncTaskService taskService = context.getBean(AsyncTaskService.class);
         System.out.println(taskService);
         for (int i = 0; i < 100; i++) {
-            System.out.println( new Date()+  "=======" + i +"=========");
+           // System.out.println( new Date()+  "=======" + i +"=========");
             taskService.executeAsyncTask(i);
             //taskService.executeAsyncTaskPlus(i);
         }
