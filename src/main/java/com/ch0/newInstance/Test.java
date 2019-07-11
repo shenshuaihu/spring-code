@@ -10,7 +10,6 @@ import org.apache.poi.ss.formula.functions.T;
 
 /**
  * @description:
- *
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-07-03 16:05
@@ -21,7 +20,7 @@ public class Test {
     public static void main(String[] args) {
 
         String className = "A";
-       // Class c = Class.forName(className);
+        // Class c = Class.forName(className);
         // factory = (DemoExcel)c.newInstance();
 
     }

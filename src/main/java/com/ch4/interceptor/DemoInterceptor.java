@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * @description: 拦截器 实现对每一个请求   继承HandlerInterceptorAdapter 可以自定义拦截器
- *
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-06-15 13:00
@@ -22,12 +21,12 @@ public class DemoInterceptor extends HandlerInterceptorAdapter {
 
     /**
      * 请求发生前执行
-     *      可以将一些没有权限的或者是非法的拦截
-     *      预处理回调方法，实现处理器的预处理（如登录检查），
-     *      第三个参数为响应的处理器（如Controller实现）；
-     *      返回值：true表示继续流程（如调用下一个拦截器或处理器）；
-     *              false表示流程中断（如登录检查失败），不会继续调用其他的拦截器或处理器，
-     *              此时我们需要通过response来产生响应；
+     * 可以将一些没有权限的或者是非法的拦截
+     * 预处理回调方法，实现处理器的预处理（如登录检查），
+     * 第三个参数为响应的处理器（如Controller实现）；
+     * 返回值：true表示继续流程（如调用下一个拦截器或处理器）；
+     * false表示流程中断（如登录检查失败），不会继续调用其他的拦截器或处理器，
+     * 此时我们需要通过response来产生响应；
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -51,9 +50,9 @@ public class DemoInterceptor extends HandlerInterceptorAdapter {
 
     /**
      * 整个请求处理完毕回调方法，即在视图渲染完毕时回调，
-     *      如性能监控中我们可以在此记录结束时间并输出消耗时间，
-     *      还可以进行一些资源清理，类似于try-catch-finally中的finally，
-     *      但仅调用处理器执行链中preHandle返回true的拦截器的afterCompletion
+     * 如性能监控中我们可以在此记录结束时间并输出消耗时间，
+     * 还可以进行一些资源清理，类似于try-catch-finally中的finally，
+     * 但仅调用处理器执行链中preHandle返回true的拦截器的afterCompletion
      */
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         long startTime = (Long) request.getAttribute("startTime");

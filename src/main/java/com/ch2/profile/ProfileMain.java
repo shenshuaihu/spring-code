@@ -8,8 +8,7 @@ package com.ch2.profile;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
- * @description:    profilec测试启动入口
- *
+ * @description: profilec测试启动入口
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-06-01 11:51

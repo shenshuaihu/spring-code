@@ -13,7 +13,6 @@ import java.util.Random;
 
 /**
  * @description: 服务器端推送控制器
- *
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-06-25 23:29
@@ -24,10 +23,12 @@ public class SseController {
     /**
      * 输出类型 text/event-stream 是对服务器端SSE的支持
      * 此处每5s向浏览器推送随机消息
+     *
      * @return
      */
     @RequestMapping(value = "/push", produces = "text/event-stream")
-    public @ResponseBody String push() {
+    public @ResponseBody
+    String push() {
         Random random = new Random();
         try {
             Thread.sleep(5000);

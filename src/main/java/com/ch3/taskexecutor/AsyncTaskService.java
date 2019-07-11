@@ -20,23 +20,24 @@ import java.util.Date;
 public class AsyncTaskService {
 
     /**
-     *  Async 异步方法
+     * Async 异步方法
+     *
      * @param i
      */
     @Async
     public void executeAsyncTask(Integer i) {
-        int a = (int)(1+Math.random()*(36000));
+        int a = (int) (1 + Math.random() * (36000));
 
         try {
             Thread.sleep(a);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(new Date() + "执行异步任务：" +  i);
+        System.out.println(new Date() + "执行异步任务：" + i);
     }
 
     @Async
     public void executeAsyncTaskPlus(Integer i) {
-        System.out.println( new Date() +"执行异步任务+1：" + i);
+        System.out.println(new Date() + "执行异步任务+1：" + i);
     }
 }

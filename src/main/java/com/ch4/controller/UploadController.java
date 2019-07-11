@@ -21,7 +21,6 @@ import java.io.IOException;
 
 /**
  * @description:
- *
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-06-23 23:24
@@ -30,7 +29,8 @@ import java.io.IOException;
 public class UploadController {
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
-    public @ResponseBody String upload(MultipartFile file) {
+    public @ResponseBody
+    String upload(MultipartFile file) {
 
         /**
          * MultipartFile 接受上传的文件

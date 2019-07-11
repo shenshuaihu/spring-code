@@ -20,7 +20,6 @@ import java.nio.charset.Charset;
 
 /**
  * @description: 自定义MessageConverter
- *
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-06-24 23:31
@@ -36,6 +35,7 @@ public class MyMessageConverter extends AbstractHttpMessageConverter<DemoObj> {
 
     /**
      * HttpMessageConverter 只处理 DemoObj类
+     *
      * @param aClass
      * @return
      */
@@ -46,6 +46,7 @@ public class MyMessageConverter extends AbstractHttpMessageConverter<DemoObj> {
 
     /**
      * 重写 readInternal 处理请求数据 。此处由‘-’隔开的数据，转化DemoObj对象
+     *
      * @param aClass
      * @param httpInputMessage
      * @return
@@ -57,11 +58,12 @@ public class MyMessageConverter extends AbstractHttpMessageConverter<DemoObj> {
 
         String temp = StreamUtils.copyToString(httpInputMessage.getBody(), Charset.forName("UTF-8"));
         String[] tempArr = temp.split("-");
-       return new DemoObj(new Long(tempArr[0]), tempArr[1]);
+        return new DemoObj(new Long(tempArr[0]), tempArr[1]);
     }
 
     /**
-     *  重写writeInternal 处理出如何输出数据到response 此处在原样中输出加上“hello”
+     * 重写writeInternal 处理出如何输出数据到response 此处在原样中输出加上“hello”
+     *
      * @param obj
      * @param httpOutputMessage
      * @throws IOException
@@ -70,7 +72,7 @@ public class MyMessageConverter extends AbstractHttpMessageConverter<DemoObj> {
     @Override
     protected void writeInternal(DemoObj obj, HttpOutputMessage httpOutputMessage) throws IOException, HttpMessageNotWritableException {
 
-        String out = "hello:" + obj.getId() + "-" +obj.getName();
+        String out = "hello:" + obj.getId() + "-" + obj.getName();
         httpOutputMessage.getBody().write(out.getBytes());
     }
 }

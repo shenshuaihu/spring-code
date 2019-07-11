@@ -16,7 +16,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @description:  计划任务执行类
+ * @description: 计划任务执行类
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-05-28 23:29
@@ -32,11 +32,11 @@ public class ScheduledTaskService {
      */
     /**
      * 周期性执行任务
-     *
+     * <p>
      * 假设:
-     *      执行一次任务需要消耗的时间为 exeTime
-     *      执行此次任务的开始时间是 nowTime
-     *      执行下一次任务的实际时间是 actuallyTime
+     * 执行一次任务需要消耗的时间为 exeTime
+     * 执行此次任务的开始时间是 nowTime
+     * 执行下一次任务的实际时间是 actuallyTime
      * 如果 exeTime >= fixedRate ，那么，actuallyTime >= nowTime + exeTime;
      * 如果 exeTime < fixedRate ， 那么，actuallyTime >= nowTime + fixedRate;
      */
@@ -76,7 +76,7 @@ public class ScheduledTaskService {
          * 使用ThreadLocalRandom.current() 防止并发时造成随机数生成的没有随机性
          */
         try {
-            Thread.sleep(ThreadLocalRandom.current().nextInt(15)*1000);
+            Thread.sleep(ThreadLocalRandom.current().nextInt(15) * 1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -84,8 +84,8 @@ public class ScheduledTaskService {
 
         LocalTime end = LocalTime.now();
 
-        System.out.println(Thread.currentThread() + " end " + number.get() + " @ "+
-                end + ", seconds cost "+ (ChronoUnit.SECONDS.between(start, end)));
+        System.out.println(Thread.currentThread() + " end " + number.get() + " @ " +
+                end + ", seconds cost " + (ChronoUnit.SECONDS.between(start, end)));
 
     }
 

@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @description:
- *
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-06-25 08:37
@@ -23,7 +22,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ConverterController {
 
     @RequestMapping(value = "/convert", produces = {"application/x-wisely"})
-    public @ResponseBody DemoObj converter(@RequestBody DemoObj demoObj) {
+    public @ResponseBody
+    DemoObj converter(@RequestBody DemoObj demoObj) {
         return demoObj;
     }
 }

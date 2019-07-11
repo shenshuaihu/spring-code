@@ -11,9 +11,8 @@ import org.springframework.web.context.request.async.DeferredResult;
 
 /**
  * @description: SSE 定时任务
- *      在PushService里面产生 DeferredResult 给控制器使用，
- *      通过 @Scheduled 定时更新DeferredResult
- *
+ * 在PushService里面产生 DeferredResult 给控制器使用，
+ * 通过 @Scheduled 定时更新DeferredResult
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-06-27 08:32

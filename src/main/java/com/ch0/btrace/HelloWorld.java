@@ -5,13 +5,13 @@
  */
 package com.ch0.btrace;
 // import all BTrace annotations
+
 import com.sun.btrace.annotations.*;
 // import statics from BTraceUtils class
 import static com.sun.btrace.BTraceUtils.*;
 
 /**
  * @description:
- *
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-06-28 10:39
@@ -25,8 +25,8 @@ public class HelloWorld {
     // In this example, we are interested in entry
     // into the Thread.start() method.
     @OnMethod(
-            clazz="java.lang.Thread",
-            method="start"
+            clazz = "java.lang.Thread",
+            method = "start"
     )
     public static void func() {
         // println is defined in BTraceUtils

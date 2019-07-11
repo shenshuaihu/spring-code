@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @description:  配置类
+ * @description: 配置类
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-05-25 00:35

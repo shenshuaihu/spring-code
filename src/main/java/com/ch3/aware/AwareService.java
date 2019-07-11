@@ -16,10 +16,9 @@ import java.io.IOException;
 
 /**
  * @description: 依赖注入的使用
- *      继承之后重新
- *      BeanNameAware 获取到容器中Bean的名称
- *      ResourceLoaderAware 获得记载器
- *
+ * 继承之后重新
+ * BeanNameAware 获取到容器中Bean的名称
+ * ResourceLoaderAware 获得记载器
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-05-25 00:24

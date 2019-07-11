@@ -14,7 +14,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-05-28 23:38
- *  注解 @EnableScheduling 开启对计划任务的支持
+ * 注解 @EnableScheduling 开启对计划任务的支持
  */
 @Configuration
 @ComponentScan("com.ch3.taskscheduler")

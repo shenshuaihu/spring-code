@@ -11,7 +11,6 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 
 /**
  * @description: 判断条件定义，判断Windows的条件
- *
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-05-30 23:12
@@ -20,6 +19,7 @@ public class WindowsCondition implements Condition {
 
     /**
      * 如果返回的为True，改内容会被创建
+     *
      * @param conditionContext
      * @param annotatedTypeMetadata
      * @return

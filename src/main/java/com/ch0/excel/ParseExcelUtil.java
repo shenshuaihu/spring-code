@@ -54,6 +54,7 @@ public final class ParseExcelUtil<T> {
     private static final String DOT_ZERO = ".0";
     private static final int NUMBER_TWO = 2;
     private static NumberFormat numberFormat = NumberFormat.getInstance();
+
     static {
         numberFormat.setGroupingUsed(false);
     }
@@ -61,13 +62,13 @@ public final class ParseExcelUtil<T> {
     /**
      * 解析Excel文件
      *
-     * @param map            excel与对象属性对应map
-     * @param file           待解析文件
+     * @param map  excel与对象属性对应map
+     * @param file 待解析文件
      * @return 对象集合
      * @throws Exception 异常
      */
-    public ImportResultData parseFile( Map<String, String> map,
-                                       MultipartFile file) throws Exception {
+    public ImportResultData parseFile(Map<String, String> map,
+                                      MultipartFile file) throws Exception {
         String fileName = file.getOriginalFilename();
         log.debug("Excel:" + fileName);
         ImportResultData importResultData = new ImportResultData();
@@ -270,12 +271,12 @@ public final class ParseExcelUtil<T> {
                             throw new RuntimeException("解析excel数值失败; ");
                         }
 
-                    } else  if (CellType.BLANK.equals(cellType)) {
+                    } else if (CellType.BLANK.equals(cellType)) {
 
                         field.set(entity, null);
 
                     } else {
-                            throw new RuntimeException("列数据格式必须为数值类型; ");
+                        throw new RuntimeException("列数据格式必须为数值类型; ");
 
                     }
                 }
@@ -317,6 +318,7 @@ public final class ParseExcelUtil<T> {
 
     /**
      * 获取导入的数字长度
+     *
      * @param cell 单元格对象
      * @return 返回值
      */

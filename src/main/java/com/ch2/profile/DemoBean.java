@@ -7,7 +7,6 @@ package com.ch2.profile;
 
 /**
  * @description: 需要测试的bean
- *
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-06-01 11:17

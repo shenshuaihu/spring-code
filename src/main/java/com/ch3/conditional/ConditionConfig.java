@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @description:    配置类
+ * @description: 配置类
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-05-30 23:20
@@ -22,6 +22,7 @@ public class ConditionConfig {
 
     /**
      * 通过 @Conditional 符号Windows条件则实例化 windowsListService
+     *
      * @return
      */
     @Bean

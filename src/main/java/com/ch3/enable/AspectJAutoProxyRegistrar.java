@@ -29,8 +29,8 @@ import org.springframework.core.type.AnnotationMetadata;
  * as appropriate based on a given @{@link EnableAspectJAutoProxy} annotation.
  *
  * @author Chris Beams
- * @since 3.1
  * @see EnableAspectJAutoProxy
+ * @since 3.1
  */
 class AspectJAutoProxyRegistrar implements ImportBeanDefinitionRegistrar {
 

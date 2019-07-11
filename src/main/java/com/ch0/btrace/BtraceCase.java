@@ -9,7 +9,6 @@ import java.util.Random;
 
 /**
  * @description: 执行add方法时，对传入参数、返回值以及执行耗时进行分析，btrace脚本：
- *
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-07-08 16:37
@@ -24,7 +23,7 @@ public class BtraceCase {
 
     public void run() throws Exception {
         while (true) {
-          int a =  add(random.nextInt(10), random.nextInt(10));
+            int a = add(random.nextInt(10), random.nextInt(10));
             System.out.println(a);
         }
     }

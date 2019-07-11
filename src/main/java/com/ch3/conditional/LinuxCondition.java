@@ -11,14 +11,13 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 
 /**
  * @description: 判断添加定义，判断Linux的条件
- *
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-05-30 23:15
  */
 public class LinuxCondition implements Condition {
-        @Override
-        public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {
-            return conditionContext.getEnvironment().getProperty("os.name").contains("Linux");
-        }
+    @Override
+    public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {
+        return conditionContext.getEnvironment().getProperty("os.name").contains("Linux");
     }
+}

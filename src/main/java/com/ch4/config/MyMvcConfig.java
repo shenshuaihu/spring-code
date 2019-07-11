@@ -50,6 +50,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
      * 对静态资源映射
      * addResourceHandler 对外暴露的访问路径
      * addResourceLocations 文件放置的目录
+     *
      * @param registry
      */
     @Override
@@ -64,7 +65,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
     }
 
     /**
-     *注册拦截器即把自定义的拦截器添加到mvc 配置中
+     * 注册拦截器即把自定义的拦截器添加到mvc 配置中
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
@@ -74,7 +75,8 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
     /**
      * 配置访问时的资源映射
      * 等同于 @RequestMapping("/index")
-     *       public String hello() { return "index";  }
+     * public String hello() { return "index";  }
+     *
      * @param registry
      */
     @Override
@@ -89,6 +91,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
 
     /**
      * URL不至于被转化格式而不识别
+     *
      * @param configurer
      */
     @Override
@@ -98,6 +101,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
 
     /**
      * 文件上传配置
+     *
      * @return
      */
     @Bean
@@ -109,6 +113,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
 
     /**
      * 添加一个自定义的HttpMessageConverter，不会覆盖默认注册的HttpMessageConverter
+     *
      * @param converters
      */
     @Override
@@ -118,6 +123,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
 
     /**
      * 自定义的bean注册进来
+     *
      * @return
      */
     @Bean

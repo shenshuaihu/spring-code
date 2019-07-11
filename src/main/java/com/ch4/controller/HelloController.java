@@ -17,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
  */
 @Controller
 public class HelloController {
-   // @RequestMapping("/index")
+    // @RequestMapping("/index")
     public String hello() {
         return "index";
     }

@@ -20,6 +20,7 @@ public class ProfileConfig {
 
     /**
      * Profile 为dev时，实例化devDemoBean 开发环境
+     *
      * @return
      */
     @Bean
@@ -30,6 +31,7 @@ public class ProfileConfig {
 
     /**
      * Profile 为prod时，实例化prodDemoBean  生成环境
+     *
      * @return
      */
     @Bean

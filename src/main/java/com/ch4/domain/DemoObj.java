@@ -10,8 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @description:  用于获取request对象参数和返回此对象到response
- *
+ * @description: 用于获取request对象参数和返回此对象到response
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-06-15 10:49
