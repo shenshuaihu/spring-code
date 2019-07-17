@@ -5,6 +5,7 @@
  */
 package com.ch4.controller.advice;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -15,12 +16,13 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * @description: 定制 ontrollerAdvice
+ * @description: 定制 controllerAdvice
  * @author: Shenshuaihu
  * @version: 1.0
  * @data: 2019-06-20 23:09
  */
 @ControllerAdvice
+@Slf4j
 public class ExceptionHandleAdvice {
 
     /**
@@ -32,6 +34,7 @@ public class ExceptionHandleAdvice {
     @ExceptionHandler(value = Exception.class)
     public ModelAndView exception(Exception exception, WebRequest request) {
         ModelAndView modelAndView = new ModelAndView("error");
+        log.info(exception.getMessage().toString());
         modelAndView.addObject("errorMessage", exception.getMessage());
         return modelAndView;
     }
