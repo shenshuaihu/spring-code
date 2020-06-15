@@ -14,7 +14,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <groovy.version>2.4.1</groovy.version>
-        <sping.version>4.1.6.RELEASE</sping.version>
+        <sping.version>5.2.7.RELEASE</sping.version>
         <commons-logging.version>1.2</commons-logging.version>
 
         <!-- Web -->
